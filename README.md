@@ -45,6 +45,8 @@ https://www.phpmyadmin.co/
 
 📍 https://wb-api-project-production.up.railway.app/
 
+![Демо проекта](resources\screenshots\demo.png)
+
 <br/>
 
 ## ▶️ Демонстрация artisan-команд
