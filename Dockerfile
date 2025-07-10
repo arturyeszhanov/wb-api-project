@@ -27,4 +27,4 @@ RUN php artisan route:clear
 EXPOSE ${PORT}
 
 # Команда запуска
-CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=${PORT}"]
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=8080"]
