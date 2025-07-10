@@ -43,7 +43,7 @@ https://www.phpmyadmin.co/
 
 ## 🔗 Деплой демонстрационной версии
 
-📍 [Ссылка на демонстрационную версию](https://example.com)
+📍 https://wb-api-project-production.up.railway.app/
 
 <br/>
 

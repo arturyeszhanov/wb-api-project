@@ -18,12 +18,13 @@ COPY . .
 # Установка зависимостей Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Генерация ключа приложения
+# Очистка кэша конфигураций
 RUN php artisan config:clear
 RUN php artisan route:clear
 
-# Порт, который будет использовать Laravel (и Render)
-EXPOSE 10000
+# Открываем порт, который Railway задаёт через переменную $PORT
+ENV PORT=8000
+EXPOSE ${PORT}
 
 # Команда запуска
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=${PORT}"]
