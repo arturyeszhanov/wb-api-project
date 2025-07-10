@@ -23,7 +23,7 @@ RUN php artisan config:clear
 RUN php artisan route:clear
 
 # Открываем порт, который Railway задаёт через переменную $PORT
-ENV PORT=8000
+# ENV PORT=8000
 EXPOSE ${PORT}
 
 # Команда запуска
