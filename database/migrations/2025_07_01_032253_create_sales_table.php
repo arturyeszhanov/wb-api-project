@@ -9,8 +9,8 @@ return new class extends Migration {
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('date');
-            $table->timestamp('last_change_date');
+            $table->timestamp('date')->nullable();
+            $table->timestamp('last_change_date')->nullable();
             $table->string('supplier_article');
             $table->string('tech_size');
             $table->string('barcode');

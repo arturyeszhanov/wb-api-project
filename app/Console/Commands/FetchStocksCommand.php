@@ -14,7 +14,7 @@ class FetchStocksCommand extends AbstractFetchCommand
     protected function setDateRange(): void
     {
         // Переопределяем диапазон: только текущий день
-        $this->dateFrom = now()->format('Y-m-d');
+        $this->dateFrom = now()->subDay()->format('Y-m-d');
         $this->dateTo = now()->format('Y-m-d');
     }
 
