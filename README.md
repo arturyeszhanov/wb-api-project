@@ -45,7 +45,7 @@
 
 ## 🔗 Деплой демонстрационной версии
 
-📍 https://wb-api-project-production.up.railway.app/
+📍 https://wb-api.artyes.dev/
 
 <br>
 
