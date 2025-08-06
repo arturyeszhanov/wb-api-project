@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Stock;
 
 class FetchStocksCommand extends AbstractFetchCommand
-{
+{$this->info(">>>>> КОМАНДА ЗАПУСТИЛАСЬ <<<<<");
     protected $signature = 'wb:fetch-stocks';
     protected $description = 'Получает остатки товаров';
     protected $endpoint = 'stocks';

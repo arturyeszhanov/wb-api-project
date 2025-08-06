@@ -88,9 +88,15 @@ abstract class AbstractFetchCommand extends Command
 
     protected function setInitialFullImportDateRange(): void
     {   
-        // Определяем диапозон для первого запуска: 2025-07-01 или дата старта работы компании
-        $this->dateFrom = '2025-07-01';
-        $this->dateTo = now()->format('Y-m-d');
+        // Если endpoint = 'stocks', берем сегодняшнюю дату
+        if ($this->endpoint === 'stocks') {
+            $this->dateFrom = now()->subDay()->format('Y-m-d');
+            $this->dateTo = now()->format('Y-m-d');
+        } else {
+            // Для остальных — с 1 июля или здесь можно указать начало старта компании
+            $this->dateFrom = '2025-07-01';
+            $this->dateTo = now()->format('Y-m-d');
+        }
     }
 
     protected function setDateRange(): void
