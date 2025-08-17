@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API_URL = "/api/orders";
-const API_KEY = "E6kUTYrYwZq2tN4QEtyzsbEBk3ie";
 
 // Новый fetchOrders, который возвращает только массив orders и дату
 export async function fetchOrders(from, to, limit = 500) {
@@ -12,7 +11,6 @@ export async function fetchOrders(from, to, limit = 500) {
         dateTo: to,
         page: 1,
         limit,
-        key: API_KEY,
       },
     });
 

@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\MainController;
 
-Route::get('/', [MainController::class, 'index']);
-Route::get('/sales', [MainController::class, 'sales'])->name('sales');
-Route::get('/orders', [MainController::class, 'orders'])->name('orders');
-Route::get('/stocks', [MainController::class, 'stocks'])->name('stocks');
-Route::get('/incomes', [MainController::class, 'incomes'])->name('incomes');
+use App\Http\Controllers\ProxyController;
+
+Route::get('/api/orders', [ProxyController::class, 'orders']);
+Route::get('/api/sales', [ProxyController::class, 'sales']);
+Route::get('/api/stocks', [ProxyController::class, 'stocks']);
+Route::get('/api/incomes', [ProxyController::class, 'incomes']);
+
 
 
 Route::get('/{any}', function () {
