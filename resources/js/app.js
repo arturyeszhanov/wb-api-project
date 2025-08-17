@@ -5,7 +5,7 @@ import router from '@/router'
 import '../css/app.css'
 
 import PrimeVue from 'primevue/config'
-import 'primevue/resources/themes/lara-light-blue/theme.css'
+import 'primevue/resources/themes/lara-light-purple/theme.css'
 import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
 import 'chart.js/auto'

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full">
+  <div>
     <DataTable
       :value="data"
       :paginator="paginator"
