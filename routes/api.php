@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,4 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+use App\Models\Sale;
+use App\Models\Order;
+use App\Models\Stock;
+use App\Models\Income;
+
+Route::get('/dashboard', function () {
+    return response()->json([
+        'sales' => Sale::latest()->limit(10)->get(),
+        'orders' => Order::latest()->limit(10)->get(),
+        'stocks' => Stock::latest()->limit(10)->get(),
+        'incomes' => Income::latest()->limit(10)->get(),
+    ]);
 });
