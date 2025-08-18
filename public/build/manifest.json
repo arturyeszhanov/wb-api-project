@@ -28,12 +28,12 @@
     "src": "node_modules/primevue/resources/themes/lara-light-purple/fonts/Inter-roman.var.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DSmw7n-z.js",
+    "file": "assets/app-CEj8Hc65.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-GntArn-a.css"
+      "assets/app-CZss9B2u.css"
     ],
     "assets": [
       "assets/Inter-roman.var-C-r5W2Hj.woff2",

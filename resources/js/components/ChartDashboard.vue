@@ -14,7 +14,7 @@ import { ref, watch } from "vue";
 import Chart from "primevue/chart";
 
 const props = defineProps({
-  data: { type: Object, required: true },  // ожидаем формат { labels, datasets }
+  data: { type: Object, required: true },
   chartType: { type: String, default: "bar" },
   title: { type: String, default: "" }
 });
@@ -41,7 +41,6 @@ const chartOptions = ref({
   },
 });
 
-// Подставляем данные агрегатора напрямую
 watch(
   () => props.data,
   (newData) => {
@@ -54,7 +53,7 @@ watch(
       labels: newData.labels,
       datasets: newData.datasets.map(ds => ({
         ...ds,
-        fill: true,
+        fill: false,
         tension: 0.3,
       })),
     };

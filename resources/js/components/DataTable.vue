@@ -1,5 +1,5 @@
 <template>
-  <div>
+<div>
     <DataTable
       :value="data"
       :paginator="paginator"
@@ -16,6 +16,7 @@
         field="previous"
         header="Предыдущий период"
         style="width: 29%"
+        
       />
       <Column
         field="current"
@@ -107,3 +108,83 @@ function formatPercent(value) {
   return `${value.toFixed(2)}%`
 }
 </script>
+
+<style>
+.styled-datatable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.styled-datatable .p-datatable-wrapper {
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-datatable thead th {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e5e7eb;
+    background-color: #6b7280;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+}
+
+.styled-datatable tbody tr:nth-child(odd) {
+    background-color: #f3f4f6;
+}
+
+.styled-datatable tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.styled-datatable tbody tr:hover {
+    background-color: #e5e7eb;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.styled-datatable tbody td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+    font-weight: 400;
+}
+
+.styled-datatable .p-paginator {
+    background-color: #f3f4f6;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.p-datatable .p-paginator-bottom {
+    border: none;
+}
+
+.styled-datatable .p-paginator .p-paginator-prev,
+.styled-datatable .p-paginator .p-paginator-next,
+.styled-datatable .p-paginator .p-paginator-page {
+    background-color: white;
+    border: 1px solid #6b7280;
+    color: #374151;
+    margin: 0 2px;
+    transition: background-color 0.2s ease;
+    min-width: 2.6rem;
+    height: 2.6rem;
+    font-size: 14px;
+}
+
+.styled-datatable .p-paginator .p-paginator-page:hover,
+.styled-datatable .p-paginator .p-paginator-prev:hover,
+.styled-datatable .p-paginator .p-paginator-next:hover {
+    background-color: #6b7280;
+    border-color: #6b7280;
+    color: white;
+    cursor: pointer;
+}
+
+.styled-datatable .p-paginator .p-paginator-page.p-highlight {
+    background-color: #6b7280;
+    color: white;
+}
+</style>
