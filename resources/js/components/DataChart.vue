@@ -16,7 +16,7 @@ import Chart from "primevue/chart";
 const props = defineProps({
     data: {
         type: Array,
-        default: () => []
+        default: () => [],
     },
 });
 
@@ -45,7 +45,9 @@ const chartOptions = ref({
     maintainAspectRatio: false,
     devicePixelRatio: window.devicePixelRatio || 1,
     onHover: (event, chartElement) => {
-        event.native.target.style.cursor = chartElement.length ? "pointer" : "default";
+        event.native.target.style.cursor = chartElement.length
+            ? "pointer"
+            : "default";
     },
     plugins: {
         legend: {

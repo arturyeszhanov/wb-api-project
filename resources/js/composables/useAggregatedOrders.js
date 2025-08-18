@@ -127,6 +127,9 @@ export function useAggregatedOrders(
           )
           return {
             nm_id: item.nm_id,
+            region: item.region,
+            category: item.category,
+            brand: item.brand,
             current: currentNum,
             previous: previousNum,
             diff,
@@ -141,7 +144,7 @@ export function useAggregatedOrders(
   }
 
   watch(
-    [currentOrders, previousOrders],
+    [currentOrders, previousOrders, filters],
     () => {
       buildAggregations()
     },
@@ -151,7 +154,7 @@ export function useAggregatedOrders(
   return {
     aggregatedData,
     topByMetric,
-    allByMetric, // новая переменная для детализации
+    allByMetric, 
     loading: isLoading,
   }
 }

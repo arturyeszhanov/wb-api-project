@@ -5,7 +5,8 @@
         <div
             class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
         >
-            <router-link to="/"
+            <router-link
+                to="/"
                 class="text-3xl font-extrabold text-white hover:text-amber-300 transition-colors duration-200"
             >
                 <svg

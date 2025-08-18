@@ -142,12 +142,11 @@
                                         'rgba(138, 43, 226, 0.2)', // фиолетовый с прозрачностью
                                         'rgba(242, 51, 157, 0.2)', // розовый
                                         'rgba(64, 224, 208, 0.2)', // бирюзовый
-                                        'rgba(74, 85, 101, 0.2)',  // серый
+                                        'rgba(74, 85, 101, 0.2)', // серый
                                     ][index],
-                                    fill: true,   // <--- включаем заливку
+                                    fill: true, // <--- включаем заливку
                                     tension: 0.3, // плавность линии
-                                }
-                                ,
+                                },
                             ],
                         }"
                         :options="chartOptions"
@@ -166,10 +165,10 @@ import { ref, computed, watch } from "vue";
 import { ArrowTrendingUpIcon } from "@heroicons/vue/24/outline";
 import { useRoute } from "vue-router";
 import { useProduct } from "@/composables/useProduct";
-import { useFiltersStore } from '@/stores/filters'
-import { storeToRefs } from 'pinia'
+import { useFiltersStore } from "@/stores/filters";
+import { storeToRefs } from "pinia";
 
-const filtersStore = useFiltersStore()
+const filtersStore = useFiltersStore();
 
 const route = useRoute();
 const nmId = route.params.nmId;
@@ -204,7 +203,7 @@ onBeforeUnmount(() => {
     scrollContainer.value.removeEventListener("wheel", handleWheel);
 });
 
-const { filters } = storeToRefs(filtersStore) 
+const { filters } = storeToRefs(filtersStore);
 
 const props = defineProps({
     nmId: {
@@ -253,6 +252,7 @@ const chartOptions = {
     overflow-x: auto;
     display: flex;
     scroll-snap-type: x mandatory;
+    cursor: grab;
 }
 
 .scroll-container th,
