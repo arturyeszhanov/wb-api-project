@@ -9,7 +9,7 @@
         @reset-filter="resetFilter"
     />
 
-    <div class="w-[90%] mx-auto flex h-full gap-6 mb-12">
+    <div class="w-[90%] mx-auto flex h-full gap-6 mb-12 mt-12">
         <!-- Левая часть -->
         <div class="w-1/3 bg-white shadow rounded-lg p-4">
             <h2 class="text-xl font-semibold mb-4">Артикул: {{ nmId }}</h2>

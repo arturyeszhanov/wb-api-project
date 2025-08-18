@@ -12,7 +12,8 @@
             :key="metric"
             class="bg-white rounded-md shadow-xl p-4"
         >
-            <h3 class="text-lg font-semibold mb-2">
+            <h3 class="text-lg font-semibold mb-2 flex items-center">
+                <component :is="metricIcons[metric]" class="w-8 h-6 mr-2 text-gray-700" />
                 {{ metricLabels[metric] }}
             </h3>
             <div>
@@ -47,6 +48,7 @@ import { useOrdersStore } from "@/stores/orders";
 import { useFiltersStore } from "@/stores/filters";
 import { useAggregatedOrders } from "../composables/useAggregatedOrders";
 import { useChartAggregator } from "../composables/useChartAggregator";
+import { ChartBarIcon, DocumentCurrencyDollarIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/vue/24/solid';
 
 function metricRouteName(metric) {
     return metric
@@ -61,6 +63,14 @@ const chartTypes = {
   is_cancel: "line",
   income_id: "bar",
 };
+
+const metricIcons = {
+  total_price: DocumentCurrencyDollarIcon,       // Сумма продаж
+  discount_percent: ChartBarIcon,        // Скидки
+  is_cancel: XMarkIcon,                     // Отмененные заказы
+  income_id: ShoppingCartIcon,           // Количество заказов
+};
+
 
 const metrics = ["total_price", "income_id", "is_cancel", "discount_percent" ];
 const metricLabels = {
